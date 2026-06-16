@@ -1,5 +1,7 @@
 # AR Collections Copilot
 
+**Live demo → https://ar-copilot-rose.vercel.app**
+
 Generate professional, tone-appropriate **collection emails** for overdue
 invoices. Built with **Next.js 16, React 19, TypeScript and Tailwind CSS**.
 
