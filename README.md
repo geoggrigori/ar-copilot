@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AR Collections Copilot
 
-## Getting Started
+Generate professional, tone-appropriate **collection emails** for overdue
+invoices. Built with **Next.js 16, React 19, TypeScript and Tailwind CSS**.
 
-First, run the development server:
+It calls an **LLM** (Anthropic or OpenAI) when an API key is configured, and
+falls back to a deterministic template generator otherwise — so it always
+produces a usable draft, online or offline.
+
+## Features
+
+- Inputs for customer, invoice number, amount and days overdue.
+- Tone selection (friendly / firm / final), auto-suggested from how late the
+  invoice is.
+- One-click copy of the generated subject + body.
+- Provider-agnostic LLM client with graceful fallback.
+
+## Tech stack
+
+| Concern    | Choice                       |
+| ---------- | ---------------------------- |
+| Framework  | Next.js 16 (App Router)      |
+| UI         | React 19, Tailwind CSS       |
+| Language   | TypeScript                   |
+| LLM        | Anthropic / OpenAI (optional) |
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Optional — enable a real LLM by setting one of:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+ANTHROPIC_API_KEY=...      # or OPENAI_API_KEY=...
+LLM_MODEL=...              # optional model override
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Without a key, the template generator is used.
 
-## Learn More
+## How it works
 
-To learn more about Next.js, take a look at the following resources:
+`POST /api/draft` receives the invoice context and tone, tries
+`llmDraft()` (provider-agnostic fetch to Anthropic/OpenAI returning JSON), and
+falls back to `templateDraft()` when no key is set or the call fails.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
