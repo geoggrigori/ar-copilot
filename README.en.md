@@ -10,10 +10,6 @@
 <a href="README.es.md"><img src="https://img.shields.io/badge/Español-555555?style=for-the-badge" alt="Español"/></a>
 </div>
 
-<h1 align="center">AR Collections Copilot</h1>
-<p align="center"><em>Generates professional, tone-appropriate collection emails for overdue invoices</em></p>
-<p align="center"><strong>Invoice data → LLM (or deterministic fallback) → ready-to-copy email</strong></p>
-
 <div align="center">
 <img src="https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="nextjs"/>
 <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black" alt="react"/>
