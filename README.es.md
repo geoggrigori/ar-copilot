@@ -10,10 +10,6 @@
 <a href="README.es.md"><img src="https://img.shields.io/badge/Español-1987F0?style=for-the-badge" alt="Español"/></a>
 </div>
 
-<h1 align="center">AR Collections Copilot</h1>
-<p align="center"><em>Genera emails de cobranza profesionales y con el tono adecuado para facturas vencidas</em></p>
-<p align="center"><strong>Datos de la factura → LLM (o fallback determinístico) → email listo para copiar</strong></p>
-
 <div align="center">
 <img src="https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="nextjs"/>
 <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black" alt="react"/>
